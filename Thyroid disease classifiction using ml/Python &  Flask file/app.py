@@ -16,7 +16,7 @@ model = pickle.load(open('rfd.pkl', 'rb'))
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('index.html')
+    return render_template('thyroid.html')
 
 
 @app.route('/', methods=['GET', "POST"])
