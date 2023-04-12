@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 app = Flask(__name__)
 run_with_ngrok(app)
 
-model = pickle.load(open('rdf.pkl', 'rb'))
+model = pickle.load(open('rfd.pkl', 'rb'))
 
 
 @app.route('/', methods=['GET'])
@@ -26,9 +26,9 @@ def predict():
     print(inp_features )
     prediction = model.predict(inp_features)
     if prediction == 1:
-        return render_template('index.html', prediction_text='Eligible to loan, Loan will be sanctioned')
+        return render_template('thyroid.html', prediction_text='Eligible to loan, Loan will be sanctioned')
     else:
-        return render_template('index.html', prediction_text='Not eligible to loan')
+        return render_template('thyroid.html', prediction_text='Not eligible to loan')
 
 
 app.run()
